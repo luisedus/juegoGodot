@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cccoyk7c46ej0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3jmw"]
+size = Vector2(30, 60)
+
+[node name="EnemigoTirador" type="CharacterBody2D" unique_id=1305080576]
+
+[node name="Cuerpo" type="ColorRect" parent="." unique_id=1243523310]
+offset_left = -15.0
+offset_top = -30.0
+offset_right = 15.0
+offset_bottom = 30.0
+color = Color(0, 0.25788808, 9.62615e-08, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=319884268]
+shape = SubResource("RectangleShape2D_h3jmw")

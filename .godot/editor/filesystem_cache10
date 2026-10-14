@@ -1,0 +1,12 @@
+78098b89c88a74ebe8c20117b8754620
+::res://::1791945135
+boton.gd::GDScript::6118354141005178297::1791934696::0::1::::<>Area2D<><>0<>0<><>::
+caja.gd::GDScript::7390797558984998223::1791927958::0::1::::<>RigidBody2D<><>0<>0<><>::
+enemigo.gd::GDScript::2416311956454119639::1791942970::0::1::::<>CharacterBody2D<><>0<>0<><>::
+enemigo.tscn::PackedScene::3700250428307038076::1791919591::0::1::::<><><>0<>0<><>::uid://baoqkmpuo5em6::::res://enemigo.gd
+icon.svg::CompressedTexture2D::5914700561456808450::1791864539::1791864554::1::::<><><>0<>0<>6b38cd23d637b9f1eca9d94bf78060f3<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+jugador.gd::GDScript::7312412790708426268::1791942970::0::1::::<>CharacterBody2D<><>0<>0<><>::
+jugador.tscn::PackedScene::8580334732790814098::1791927298::0::1::::<><><>0<>0<><>::uid://dcggmucrme5iu::::res://jugador.gd
+nivel_1.tscn::PackedScene::5712027028833405417::1791943575::0::1::::<><><>0<>0<><>::uid://duim4hrxi3lv3::::res://jugador.tscn<>uid://bsyot4bhgyyki::::res://enemigo.tscn<>uid://ddkfmdry3shml::::res://caja.gd<>uid://dkmrquovmurfh::::res://puerta.gd<>uid://ctf1ntaokgtob::::res://boton.gd
+puerta.gd::GDScript::7886984855153103093::1791931231::0::1::::<>StaticBody2D<><>0<>0<><>::
+sheet.png::CompressedTexture2D::1625504399207741617::1791945135::1791945136::1::::<><><>0<>0<>0206e73a4e07a9d45cb7c9ad60047fc3<>res://.godot/imported/sheet.png-b93731627d2f5b1030ad8028f44ebe69.ctex::

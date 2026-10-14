@@ -1,0 +1,11 @@
+res://nivel_1.tscn
+res://jugador.gd
+res://enemigo.gd
+res://escalera.gd
+res://puzzle_circular.gd
+res://terminal.gd
+res://bala.gd
+res://enemigo_tirador.gd
+res://nivel_2.gd
+res://pieza_codigo.gd
+res://salida.gd

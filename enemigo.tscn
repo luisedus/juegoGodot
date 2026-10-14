@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bsyot4bhgyyki"]
+
+[ext_resource type="Script" uid="uid://baoqkmpuo5em6" path="res://enemigo.gd" id="1_becj5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3jmw"]
+size = Vector2(30, 60)
+
+[node name="Enemigo" type="CharacterBody2D" unique_id=1343795822]
+script = ExtResource("1_becj5")
+
+[node name="Cuerpo" type="ColorRect" parent="." unique_id=120212961]
+offset_left = -15.0
+offset_top = -30.0
+offset_right = 15.0
+offset_bottom = 30.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=599449251]
+shape = SubResource("RectangleShape2D_h3jmw")
