@@ -1,10 +1,9 @@
 extends Node2D
-# Nivel 2 (hospital subterráneo): reúne las piezas del código para abrir la rejilla de la ventilación
+# Nivel 2 (hospital subterráneo): reúne las piezas del código y escríbelo en la terminal
 
-@export var puerta: Node
 @export var total_piezas = 3
 
-var recogidas = []
+var recogidas = {}        # posición -> dígito
 var hud
 
 
@@ -19,17 +18,13 @@ func _ready():
 	_actualizar_hud()
 
 
-func pieza_recogida(digito):
-	recogidas.append(digito)
+func pieza_recogida(posicion, digito):
+	recogidas[posicion] = digito
 	_actualizar_hud()
-	if recogidas.size() >= total_piezas and puerta != null:
-		puerta.abrir()
 
 
 func _actualizar_hud():
 	var texto = "Código: "
-	for i in range(total_piezas):
-		texto += (str(recogidas[i]) if i < recogidas.size() else "_") + " "
-	if recogidas.size() >= total_piezas:
-		texto += "  ¡Rejilla abierta!"
+	for i in range(1, total_piezas + 1):
+		texto += (str(recogidas[i]) if recogidas.has(i) else "_") + " "
 	hud.text = texto

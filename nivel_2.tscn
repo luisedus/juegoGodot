@@ -1,0 +1,180 @@
+[gd_scene format=3 uid="uid://jude32pcs4m"]
+
+[ext_resource type="PackedScene" uid="uid://duim4hrxi3lv3" path="res://jugador.tscn" id="1_3ux85"]
+[ext_resource type="Script" uid="uid://cgwjwk1bduokq" path="res://nivel_2.gd" id="1_lj8fh"]
+[ext_resource type="Script" uid="uid://dkmrquovmurfh" path="res://puerta.gd" id="4_1vpmn"]
+[ext_resource type="PackedScene" uid="uid://cccoyk7c46ej0" path="res://enemigo_tirador.tscn" id="5_tnojt"]
+[ext_resource type="Script" uid="uid://ccuawrfisnkcx" path="res://escalera.gd" id="6_0p6vv"]
+[ext_resource type="PackedScene" uid="uid://b32gsjubddsa1" path="res://pieza_codigo.tscn" id="6_es3ns"]
+[ext_resource type="Script" uid="uid://7w18ebhp7t76" path="res://terminal_puzle.gd" id="8_3ux85"]
+[ext_resource type="Script" uid="uid://cjfkfnsp6nsjo" path="res://salida.gd" id="8_t0by4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3jmw"]
+size = Vector2(3200, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vs7p"]
+size = Vector2(500, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awabh"]
+size = Vector2(1500, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8ich"]
+size = Vector2(40, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gf87d"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gks4b"]
+size = Vector2(500, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lghhd"]
+size = Vector2(500, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8ydn"]
+size = Vector2(30, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4xex"]
+size = Vector2(60, 80)
+
+[node name="Nivel2" type="Node2D" unique_id=1857064520]
+script = ExtResource("1_lj8fh")
+
+[node name="Piso" type="StaticBody2D" parent="." unique_id=687912192]
+position = Vector2(1600, 580)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Piso" unique_id=577397616]
+shape = SubResource("RectangleShape2D_h3jmw")
+
+[node name="ColorRect" type="ColorRect" parent="Piso" unique_id=378510728]
+offset_left = -1600.0
+offset_top = -80.0
+offset_right = 1600.0
+offset_bottom = 80.0
+color = Color(0.64705884, 0.16470589, 0.16470589, 1)
+
+[node name="Jugador" parent="." unique_id=32492433 instance=ExtResource("1_3ux85")]
+position = Vector2(100, 470)
+
+[node name="Trinchera" type="StaticBody2D" parent="." unique_id=2048346401]
+position = Vector2(3450, 640)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trinchera" unique_id=1188796371]
+shape = SubResource("RectangleShape2D_3vs7p")
+
+[node name="ColorRect" type="ColorRect" parent="Trinchera" unique_id=58265566]
+offset_left = -250.0
+offset_top = -20.0
+offset_right = 250.0
+offset_bottom = 20.0
+color = Color(0.64705884, 0.16470589, 0.16470589, 1)
+
+[node name="Piso2" type="StaticBody2D" parent="." unique_id=556863556]
+position = Vector2(4450, 580)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Piso2" unique_id=695188003]
+shape = SubResource("RectangleShape2D_awabh")
+
+[node name="ColorRect" type="ColorRect" parent="Piso2" unique_id=1084266169]
+offset_left = -750.0
+offset_top = -80.0
+offset_right = 750.0
+offset_bottom = 80.0
+color = Color(0, 0, 0, 1)
+
+[node name="Escalera" type="Area2D" parent="." unique_id=740348128]
+position = Vector2(3680, 530)
+script = ExtResource("6_0p6vv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escalera" unique_id=2060521646]
+shape = SubResource("RectangleShape2D_i8ich")
+
+[node name="ColorRect" type="ColorRect" parent="Escalera" unique_id=976757433]
+offset_left = -20.0
+offset_top = -30.0
+offset_right = 20.0
+offset_bottom = 90.0
+color = Color(0.13174233, 0.13174233, 0.13174233, 1)
+
+[node name="Salida" type="Area2D" parent="." unique_id=552368954]
+position = Vector2(5170, 480)
+script = ExtResource("8_t0by4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Salida" unique_id=67808944]
+shape = SubResource("RectangleShape2D_gf87d")
+
+[node name="EnemigoTirador" parent="." unique_id=1305080576 instance=ExtResource("5_tnojt")]
+position = Vector2(1100, 440)
+
+[node name="EnemigoTirador2" parent="." unique_id=1656848522 instance=ExtResource("5_tnojt")]
+position = Vector2(2300, 440)
+
+[node name="EnemigoTirador3" parent="." unique_id=358128264 instance=ExtResource("5_tnojt")]
+position = Vector2(4300, 460)
+
+[node name="PiezaCodigo" parent="." unique_id=559545864 instance=ExtResource("6_es3ns")]
+position = Vector2(1500, 485)
+digito = 3
+
+[node name="PiezaCodigo2" parent="." unique_id=563666576 instance=ExtResource("6_es3ns")]
+position = Vector2(2850, 485)
+digito = 7
+
+[node name="PiezaCodigo3" parent="." unique_id=1408544424 instance=ExtResource("6_es3ns")]
+position = Vector2(3280, 612)
+digito = 1
+
+[node name="DuctoServicio" type="StaticBody2D" parent="." unique_id=762816297]
+position = Vector2(2950, 380)
+constant_linear_velocity = Vector2(2850, 380)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DuctoServicio" unique_id=689033468]
+shape = SubResource("RectangleShape2D_gks4b")
+
+[node name="ColorRect" type="ColorRect" parent="DuctoServicio" unique_id=555845166]
+offset_left = -250.0
+offset_top = -80.0
+offset_right = 250.0
+offset_bottom = 80.0
+color = Color(0.64705884, 0.16470589, 0.16470589, 1)
+
+[node name="TechoVentilacion" type="StaticBody2D" parent="." unique_id=1825533832]
+position = Vector2(4950, 380)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TechoVentilacion" unique_id=1655752458]
+shape = SubResource("RectangleShape2D_lghhd")
+
+[node name="ColorRect" type="ColorRect" parent="TechoVentilacion" unique_id=300366996]
+offset_left = -250.0
+offset_top = -80.0
+offset_right = 250.0
+offset_bottom = 80.0
+color = Color(0.3232125, 0.3232125, 0.3232125, 1)
+
+[node name="Rejilla" type="StaticBody2D" parent="." unique_id=1608537475]
+position = Vector2(4700, 480)
+script = ExtResource("4_1vpmn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rejilla" unique_id=1489543522]
+shape = SubResource("RectangleShape2D_r8ydn")
+
+[node name="ColorRect" type="ColorRect" parent="Rejilla" unique_id=2002986566]
+offset_left = -15.0
+offset_top = -20.0
+offset_right = 15.0
+offset_bottom = 20.0
+color = Color(0.5802277, 0.58022773, 0.58022773, 1)
+
+[node name="Terminal" type="Area2D" parent="." unique_id=697781430 node_paths=PackedStringArray("objetivo")]
+position = Vector2(4550, 460)
+script = ExtResource("8_3ux85")
+objetivo = NodePath("../Rejilla")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terminal" unique_id=1370231100]
+shape = SubResource("RectangleShape2D_r4xex")
+
+[node name="ColorRect" type="ColorRect" parent="Terminal" unique_id=1583379235]
+offset_left = -20.0
+offset_top = -35.0
+offset_right = 20.0
+offset_bottom = 35.0
+color = Color(1.6364455e-06, 0.70816475, 0.70878834, 1)

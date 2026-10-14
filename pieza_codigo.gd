@@ -2,6 +2,7 @@ extends Area2D
 # Pieza del código: casi invisible, se hace visible al acercarte. Se recoge con el agarre (F).
 
 @export var digito = 0
+@export var posicion = 1                 # lugar que ocupa en el código (1, 2 o 3)
 @export var radio_aparicion = 160.0
 
 var jugador = null
@@ -22,5 +23,5 @@ func _process(_delta):
 
 # La llama el jugador cuando la agarra
 func recoger():
-	get_tree().call_group("nivel", "pieza_recogida", digito)
+	get_tree().call_group("nivel", "pieza_recogida", posicion, digito)
 	queue_free()

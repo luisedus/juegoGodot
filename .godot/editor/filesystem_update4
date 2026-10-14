@@ -9,3 +9,8 @@ res://enemigo_tirador.gd
 res://nivel_2.gd
 res://pieza_codigo.gd
 res://salida.gd
+res://nivel_2.tscn
+res://enemigo_tirador.tscn
+res://pieza_codigo.tscn
+res://panel_codigo.gd
+res://terminal_puzle.gd

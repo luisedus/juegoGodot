@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://cccoyk7c46ej0"]
 
+[ext_resource type="Script" uid="uid://c64i34pqv277w" path="res://enemigo_tirador.gd" id="1_hkh1y"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h3jmw"]
 size = Vector2(30, 60)
 
 [node name="EnemigoTirador" type="CharacterBody2D" unique_id=1305080576]
+script = ExtResource("1_hkh1y")
 
 [node name="Cuerpo" type="ColorRect" parent="." unique_id=1243523310]
 offset_left = -15.0

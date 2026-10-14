@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://ctf1ntaokgtob" path="res://boton.gd" id="5_320mp"]
 [ext_resource type="Script" uid="uid://ccuawrfisnkcx" path="res://escalera.gd" id="6_kd3qp"]
 [ext_resource type="Script" uid="uid://eiukxnwawa51" path="res://terminal.gd" id="7_6epq6"]
+[ext_resource type="Script" uid="uid://cjfkfnsp6nsjo" path="res://salida.gd" id="8_vfns5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h3jmw"]
 size = Vector2(3200, 160)
@@ -34,6 +35,9 @@ size = Vector2(30, 160)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r4xex"]
 size = Vector2(60, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gf87d"]
+size = Vector2(60, 120)
 
 [node name="Nivel1" type="Node2D" unique_id=1857064520]
 
@@ -194,3 +198,11 @@ offset_top = -35.0
 offset_right = 20.0
 offset_bottom = 35.0
 color = Color(1, 0, 0, 1)
+
+[node name="Salida" type="Area2D" parent="." unique_id=552368954]
+position = Vector2(5150, 440)
+script = ExtResource("8_vfns5")
+siguiente_escena = "uid://jude32pcs4m"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Salida" unique_id=67808944]
+shape = SubResource("RectangleShape2D_gf87d")
