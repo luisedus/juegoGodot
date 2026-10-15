@@ -14,3 +14,9 @@ res://enemigo_tirador.tscn
 res://pieza_codigo.tscn
 res://panel_codigo.gd
 res://terminal_puzle.gd
+res://enemigo_jefe.gd
+res://nivel_3.gd
+res://puzzle_cuchillos.gd
+res://trampa_caja.gd
+res://nivel_3.tscn
+res://puerta.gd

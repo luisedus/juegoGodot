@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://d1aq7eerbe876"]
+
+[ext_resource type="Script" uid="uid://c61y2wfh5jr1i" path="res://nivel_3.gd" id="1_5jc6x"]
+[ext_resource type="PackedScene" uid="uid://duim4hrxi3lv3" path="res://jugador.tscn" id="2_cdqb5"]
+[ext_resource type="Script" uid="uid://ccuawrfisnkcx" path="res://escalera.gd" id="3_turtx"]
+[ext_resource type="PackedScene" uid="uid://ct604aiykqo62" path="res://enemigo_jefe.tscn" id="4_foow7"]
+[ext_resource type="Script" uid="uid://u5i8h7oilknl" path="res://trampa_caja.gd" id="6_ai75a"]
+[ext_resource type="Script" uid="uid://7w18ebhp7t76" path="res://terminal_puzle.gd" id="8_5ipfx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3jmw"]
+size = Vector2(3300, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8ich"]
+size = Vector2(40, 210)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7ihn"]
+size = Vector2(1050, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n3hcd"]
+size = Vector2(60, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3pew"]
+size = Vector2(40, 50)
+
+[node name="Nivel3" type="Node2D" unique_id=1857064520]
+script = ExtResource("1_5jc6x")
+
+[node name="Piso" type="StaticBody2D" parent="." unique_id=687912192]
+position = Vector2(1650, 580)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Piso" unique_id=577397616]
+shape = SubResource("RectangleShape2D_h3jmw")
+
+[node name="ColorRect" type="ColorRect" parent="Piso" unique_id=378510728]
+offset_left = -1650.0
+offset_top = -80.0
+offset_right = 1650.0
+offset_bottom = 80.0
+color = Color(0.64705884, 0.16470589, 0.16470589, 1)
+
+[node name="Jugador" parent="." unique_id=32492433 instance=ExtResource("2_cdqb5")]
+position = Vector2(100, 470)
+
+[node name="Escalera" type="Area2D" parent="." unique_id=740348128]
+position = Vector2(2080, 400)
+script = ExtResource("3_turtx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escalera" unique_id=2060521646]
+shape = SubResource("RectangleShape2D_i8ich")
+
+[node name="ColorRect" type="ColorRect" parent="Escalera" unique_id=976757433]
+offset_left = -20.0
+offset_top = -105.0
+offset_right = 20.0
+offset_bottom = 105.0
+color = Color(0.13174233, 0.13174233, 0.13174233, 1)
+
+[node name="Plataforma" type="StaticBody2D" parent="." unique_id=1872303947]
+position = Vector2(2625, 320)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma" unique_id=1575584793]
+shape = SubResource("RectangleShape2D_y7ihn")
+
+[node name="ColorRect" type="ColorRect" parent="Plataforma" unique_id=1953908176]
+offset_left = -525.0
+offset_top = -20.0
+offset_right = 525.0
+offset_bottom = 20.0
+color = Color(0.12005126, 0.12005126, 0.12005126, 1)
+
+[node name="EnemigoJefe" parent="." unique_id=2021293895 instance=ExtResource("4_foow7")]
+position = Vector2(1500, 0)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1747940991]
+
+[node name="Terminal" type="Area2D" parent="." unique_id=1139423057 node_paths=PackedStringArray("objetivo")]
+position = Vector2(2900, 260)
+script = ExtResource("8_5ipfx")
+tipo = "cuchillos"
+objetivo = NodePath("../Trampa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terminal" unique_id=864139207]
+shape = SubResource("RectangleShape2D_n3hcd")
+
+[node name="ColorRect" type="ColorRect" parent="Terminal" unique_id=1717175029]
+offset_left = -20.0
+offset_top = -35.0
+offset_right = 20.0
+offset_bottom = 35.0
+color = Color(0.18072194, 0.18072197, 0.18072197, 1)
+
+[node name="MuroBajo" type="StaticBody2D" parent="." unique_id=308300925]
+position = Vector2(1000, 475)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MuroBajo" unique_id=58657391]
+shape = SubResource("RectangleShape2D_c3pew")
+
+[node name="ColorRect" type="ColorRect" parent="MuroBajo" unique_id=15335339]
+offset_left = -20.0
+offset_top = -25.0
+offset_right = 20.0
+offset_bottom = 25.0
+color = Color(0.28485027, 0.28485027, 0.28485027, 1)
+
+[node name="Trampa" type="Node2D" parent="." unique_id=701826322]
+position = Vector2(2500, -140)
+script = ExtResource("6_ai75a")
+
+[node name="Cuerda" type="ColorRect" parent="Trampa" unique_id=228029629]
+offset_left = -3.0
+offset_right = 3.0
+offset_bottom = 140.0
+color = Color(0.67086744, 0.67086697, 3.85046e-07, 1)
+
+[node name="Caja" type="ColorRect" parent="Trampa" unique_id=344028748]
+offset_left = -40.0
+offset_top = 140.0
+offset_right = 40.0
+offset_bottom = 220.0
+color = Color(0.2585664, 0.2585664, 0.25856638, 1)

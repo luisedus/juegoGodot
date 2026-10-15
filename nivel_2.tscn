@@ -98,6 +98,7 @@ color = Color(0.13174233, 0.13174233, 0.13174233, 1)
 [node name="Salida" type="Area2D" parent="." unique_id=552368954]
 position = Vector2(5170, 480)
 script = ExtResource("8_t0by4")
+siguiente_escena = "uid://d1aq7eerbe876"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Salida" unique_id=67808944]
 shape = SubResource("RectangleShape2D_gf87d")
@@ -118,10 +119,12 @@ digito = 3
 [node name="PiezaCodigo2" parent="." unique_id=563666576 instance=ExtResource("6_es3ns")]
 position = Vector2(2850, 485)
 digito = 7
+posicion = 2
 
 [node name="PiezaCodigo3" parent="." unique_id=1408544424 instance=ExtResource("6_es3ns")]
 position = Vector2(3280, 612)
 digito = 1
+posicion = 3
 
 [node name="DuctoServicio" type="StaticBody2D" parent="." unique_id=762816297]
 position = Vector2(2950, 380)

@@ -1,9 +1,10 @@
 extends Area2D
-# Proyectil del enemigo tirador: viaja recto y mata al jugador si lo toca
+# Proyectil del enemigo: viaja recto y mata al jugador si lo toca
 
 var direccion = 1
 var velocidad = 320.0
 var tiempo_vida = 4.0
+var esquivable = true      # si es false, Shift no protege: hay que saltar o agacharse
 
 
 func _ready():
@@ -19,7 +20,10 @@ func _physics_process(delta):
 
 func _al_chocar(cuerpo):
 	if cuerpo.is_in_group("jugador"):
-		cuerpo.recibir_golpe(1)
+		if esquivable:
+			cuerpo.recibir_golpe(1)
+		else:
+			cuerpo.morir()
 		queue_free()
 	elif not cuerpo.is_in_group("enemigos"):
 		queue_free()

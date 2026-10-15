@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ct604aiykqo62"]
+
+[ext_resource type="Script" uid="uid://c7hegjel7k44r" path="res://enemigo_jefe.gd" id="1_yra7j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3jmw"]
+size = Vector2(36, 70)
+
+[node name="EnemigoJefe" type="CharacterBody2D" unique_id=2021293895]
+script = ExtResource("1_yra7j")
+
+[node name="Cuerpo" type="ColorRect" parent="." unique_id=1470308633]
+custom_minimum_size = Vector2(36, 70)
+offset_left = -18.0
+offset_top = -35.0
+offset_right = 22.0
+offset_bottom = 35.0
+offset_transform_position = Vector2(-18, -35)
+color = Color(0.2946382, 3.218744e-07, 8.4228816e-08, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1811463318]
+shape = SubResource("RectangleShape2D_h3jmw")
